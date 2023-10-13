@@ -1,2 +1,2 @@
-# FAWD1
-Lab1
+# FAWD
+Labs
