@@ -73,22 +73,17 @@ class TaskController extends AbstractController
      */
     public function addCategories(EntityManagerInterface $entityManager)
     {
-        // Создайте экземпляры категорий
         $category1 = new Category();
         $category2 = new Category();
 
-        // Установите значения полей категорий
         $category1->setName('Категория 1');
         $category2->setName('Категория 2');
 
-        // Сохраните категории в базе данных
         $entityManager->persist($category1);
         $entityManager->persist($category2);
         $entityManager->flush();
 
-        // Ваши категории теперь сохранены в базе данных
-
-        return $this->redirectToRoute('task_list'); // Перенаправьте пользователя на страницу списка задач или другую страницу
+        return $this->redirectToRoute('task_list');
     }
 
 /**
@@ -108,14 +103,14 @@ $form = $this->createForm(TaskType::class, $task);
 $form->handleRequest($request);
 
     if ($form->isSubmitted() && $form->isValid()) {
-        $entityManager->flush(); // Сохраняем обновленные данные
+        $entityManager->flush();
 
-        return $this->redirectToRoute('task_list'); // Перенаправляем на список задач
+        return $this->redirectToRoute('task_list');
     }
 
 return $this->render('task/update.html.twig', [
     'task' => $task,
-    'form' => $form->createView(), // Используйте метод createView() для формы
+    'form' => $form->createView(),
 ]);
 
 

@@ -29,13 +29,12 @@ class AddCategoriesCommand extends Command
 
     protected function execute(InputInterface $input, OutputInterface $output)
     {
-        // Create category instances
         $category1 = new Category();
-        $category1->name = 'Category 1'; // Установите значение через свойство
+        $category1->name = 'Category 1'; 
         $this->entityManager->persist($category1);
 
         $category2 = new Category();
-        $category2->name = 'Category 2'; // Установите значение через свойство
+        $category2->name = 'Category 2';
         $this->entityManager->persist($category2);
 
         $this->entityManager->flush();
