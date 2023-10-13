@@ -1,0 +1,29 @@
+controllers:
+    resource: ../src/Controller/
+    type: annotation
+
+kernel:
+    resource: ../src/Kernel.php
+    type: annotation
+
+task_list:
+    path: /tasks
+    controller: App\Controller\TaskController::list
+
+task_create:
+    path: /tasks/create
+    controller: App\Controller\TaskController::create
+
+task_view:
+    path: /tasks/{id}
+    controller: App\Controller\TaskController::view
+
+
+
+task_update:
+    path: /tasks/{id}/update
+    controller: App\Controller\TaskController::update
+
+task_delete:
+    path: /tasks/{id}/delete
+    controller: App\Controller\TaskController::delete

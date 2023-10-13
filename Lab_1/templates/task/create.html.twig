@@ -1,0 +1,24 @@
+{# templates/task/create.html.twig #}
+
+{% extends 'base.html.twig' %}
+
+{% block title %}Создание задачи{% endblock %}
+
+{% block body %}
+    <h1>Создание задачи</h1>
+    {{ form_start(form) }}
+    {{ form_widget(form) }}
+    {{ form_end(form) }}
+
+    {% if errors|length > 0 %}
+        <div class="alert alert-danger">
+            <ul>
+                {% for error in errors %}
+                    <li>{{ error.message }}</li>
+                {% endfor %}
+            </ul>
+        </div>
+    {% endif %}
+
+    <p><a href="{{ path('task_list') }}">Вернуться к списку задач</a></p>
+{% endblock %}
